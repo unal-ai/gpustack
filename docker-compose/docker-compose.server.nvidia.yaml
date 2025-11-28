@@ -1,6 +1,6 @@
 services:
   gpustack-server:
-    image: gpustack/gpustack
+    image: ghcr.io/unal-ai/gpustack
     container_name: gpustack-server
     restart: unless-stopped
     privileged: true

@@ -89,11 +89,8 @@ cache = TTLCache(maxsize=3, ttl=3600)
 def determine_default_registry(override: Optional[str] = None) -> Optional[str]:
     if override is not None and len(override) > 0:
         return override
-    docker_hub_reachable = check_registry_reachable("https://registry-1.docker.io")
-    quay_io_reachable = check_registry_reachable("https://quay.io")
-    if docker_hub_reachable:
+    ghcr_reachable = check_registry_reachable("https://ghcr.io")
+    # Default to GHCR; if it is unreachable, require an explicit override.
+    if ghcr_reachable:
         return None
-    elif quay_io_reachable:
-        return "quay.io"
-    else:
-        return None
+    return override

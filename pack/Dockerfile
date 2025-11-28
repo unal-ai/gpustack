@@ -30,7 +30,7 @@ ARG HIGRESS_APISERVER_VERSION=0.0.25
 # Stage Base
 #
 # Example build command:
-#   docker build --tag=gpustack/gpustack:base --file=pack/Dockerfile --target=base --progress=plain .
+#   docker build --tag=ghcr.io/unal-ai/gpustack:base --file=pack/Dockerfile --target=base --progress=plain .
 #
 
 FROM higress-registry.cn-hangzhou.cr.aliyuncs.com/higress/api-server:${HIGRESS_APISERVER_VERSION} AS apiserver
@@ -279,7 +279,7 @@ ENV S6_KEEP_ENV=1 \
 # Stage GPUStack
 #
 # Example build command:
-#   docker build --tag=gpustack/gpustack:main --file=pack/Dockerfile --progress=plain .
+#   docker build --tag=ghcr.io/unal-ai/gpustack:main --file=pack/Dockerfile --progress=plain .
 #
 
 # Vendor ROCm libraries from ROCm base image,

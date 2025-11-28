@@ -32,7 +32,7 @@ function pack() {
             --bootstrap
     fi
 
-    LABELS=("org.opencontainers.image.source=https://github.com/gpustack/gpustack" "org.opencontainers.image.version=main" "org.opencontainers.image.revision=$(git rev-parse HEAD 2>/dev/null || echo "unknown")" "org.opencontainers.image.created=$(date +"%Y-%m-%dT%H:%M:%S.%s")");
+    LABELS=("org.opencontainers.image.source=https://github.com/unal-ai/gpustack" "org.opencontainers.image.version=main" "org.opencontainers.image.revision=$(git rev-parse HEAD 2>/dev/null || echo "unknown")" "org.opencontainers.image.created=$(date +"%Y-%m-%dT%H:%M:%S.%s")");
     TAG="${PACKAGE_NAMESPACE}/${PACKAGE_REPOSITORY}:${PACKAGE_TAG}"
     EXTRA_ARGS=()
 	if [[ "${PACKAGE_WITH_CACHE}" == "true" ]]; then

@@ -11,7 +11,7 @@ from gpustack_runtime.cmds import (
 
 # Append images used by GPUStack here.
 append_images(
-    f"gpustack/gpustack:{'main' if __version__.removeprefix('v') == '0.0.0' else __version__}",
+    f"ghcr.io/unal-ai/gpustack:{'main' if __version__.removeprefix('v') == '0.0.0' else __version__}",
 )
 
 

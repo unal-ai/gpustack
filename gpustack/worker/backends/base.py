@@ -839,8 +839,7 @@ $@
         3) If the image does not have an explicit registry and no system default registry is configured,
            using docker.io as default if image without "gpustack" prefix.
         4) If the image does not have an explicit registry and no system default registry is configured,
-           and with "gpustack" prefix, using docker.io as default if docker.io is reachable.
-           Otherwise, using quay.io.
+           and with "gpustack" prefix, use the fallback registry if configured (for example, a GHCR mirror).
         """
         registry_cfg = (self._config.system_default_container_registry or "").strip()
 
@@ -869,8 +868,6 @@ $@
             return image
 
         # 4) Otherwise, use fallback registry if configured.
-        #    The fallback registry is Docker Hub or Quay.io depending on reachability.
-        #    If both are not reachable, use docker.io as default.
         prefix = self._fallback_registry + "/" if self._fallback_registry else ""
         return f"{prefix}{image}"
 

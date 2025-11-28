@@ -124,7 +124,7 @@ def setup_start_cmd(subparsers: argparse._SubParsersAction):
     group.add_argument(
         "--image-repo",
         type=str,
-        help="Override the default image repository gpustack/gpustack for the GPUStack container.",
+        help="Override the default image repository ghcr.io/unal-ai/gpustack for the GPUStack container.",
         default=get_gpustack_env("IMAGE_REPO"),
     )
     group.add_argument(
