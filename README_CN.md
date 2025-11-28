@@ -1,15 +1,15 @@
 <br>
 
 <p align="center">
-    <img alt="GPUStack" src="https://raw.githubusercontent.com/gpustack/gpustack/main/docs/assets/gpustack-logo.png" width="300px"/>
+    <img alt="GPUStack" src="https://raw.githubusercontent.com/unal-ai/gpustack/main/docs/assets/gpustack-logo.png" width="300px"/>
 </p>
 <br>
 
 <p align="center">
-    <a href="https://docs.gpustack.ai" target="_blank">
+    <a href="https://unal-ai.github.io/gpustack" target="_blank">
         <img alt="Documentation" src="https://img.shields.io/badge/文档-GPUStack-blue?logo=readthedocs&logoColor=white"></a>
     <a href="./LICENSE" target="_blank">
-        <img alt="License" src="https://img.shields.io/github/license/gpustack/gpustack?logo=github&logoColor=white&label=License&color=blue"></a>
+        <img alt="License" src="https://img.shields.io/github/license/unal-ai/gpustack?logo=github&logoColor=white&label=License&color=blue"></a>
     <a href="./docs/assets/wechat-group-qrcode.jpg" target="_blank">
         <img alt="WeChat" src="https://img.shields.io/badge/微信群-GPUStack-blue?logo=wechat&logoColor=white"></a>
     <a href="https://discord.gg/VXYJzuaqwD" target="_blank">
@@ -35,7 +35,7 @@ GPUStack 是一个开源的 GPU 集群管理器，专为高效的 AI 模型部�
 
 ![a100-throughput-comparison](docs/assets/a100-throughput-comparison.png)
 
-有关详细的基准测试方法和结果，请访问我们的 [推理性能实验室](https://docs.gpustack.ai/latest/performance-lab/overview/)。
+有关详细的基准测试方法和结果，请访问我们的 [推理性能实验室](https://unal-ai.github.io/gpustack/performance-lab/overview/)。
 
 ## 经过测试的推理引擎、GPU 和模型
 
@@ -87,10 +87,10 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
-如果您无法从 `Docker Hub` 拉取镜像或下载速度很慢，可以使用我们的 `Quay.io` 镜像，将仓库指向 `quay.io`：
+如果需要从内部镜像站点拉取镜像，请覆盖默认的 GHCR：
 
 ```bash
 sudo docker run -d --name gpustack \
@@ -100,11 +100,11 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    quay.io/gpustack/gpustack \
-    --system-default-container-registry quay.io
+    ghcr.io/unal-ai/gpustack \
+    --system-default-container-registry <your_registry>
 ```
 
-有关安装或其他 GPU 硬件平台的更多详细信息，请参阅 [安装要求](https://docs.gpustack.ai/latest/installation/requirements/)。
+有关安装或其他 GPU 硬件平台的更多详细信息，请参阅 [安装要求](https://unal-ai.github.io/gpustack/installation/requirements/)。
 
 检查 GPUStack 启动日志：
 
@@ -168,7 +168,7 @@ curl http://your_gpustack_server_url/v1/chat/completions \
 
 ## 文档
 
-请参阅 [官方文档站点](https://docs.gpustack.ai) 获取完整文档。
+请参阅 [官方文档站点](https://unal-ai.github.io/gpustack) 获取完整文档。
 
 ## 构建
 

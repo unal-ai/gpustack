@@ -92,7 +92,7 @@ If you started GPUStack using `docker run` (not Compose), you can deploy the obs
 
 1. **Docker Compose Configuration**
 
-    Compose file location: [docker-compose.observability.yaml (GitHub)](https://github.com/gpustack/gpustack/blob/main/docker-compose/docker-compose.observability.yaml)
+    Compose file location: [docker-compose.observability.yaml (GitHub)](https://github.com/unal-ai/gpustack/blob/main/docker-compose/docker-compose.observability.yaml)
 
     ```yaml
     services:
@@ -128,7 +128,7 @@ If you started GPUStack using `docker run` (not Compose), you can deploy the obs
 
 2. **Edit the Prometheus configuration file `prometheus.yml`**.
 
-    Configure Prometheus to scrape metrics from GPUStack by editing the `prometheus.yml`, file location: [prometheus.yaml (GitHub)](https://github.com/gpustack/gpustack/blob/main/docker-compose/prometheus/prometheus.yml)
+    Configure Prometheus to scrape metrics from GPUStack by editing the `prometheus.yml`, file location: [prometheus.yaml (GitHub)](https://github.com/unal-ai/gpustack/blob/main/docker-compose/prometheus/prometheus.yml)
 
     ```yaml
     scrape_configs:

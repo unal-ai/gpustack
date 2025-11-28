@@ -61,7 +61,7 @@ sudo docker run -d --name gpustack \
     -e GPUSTACK_OIDC_CLIENT_ID="<your-client-id>" \
     -e GPUSTACK_OIDC_CLIENT_SECRET="<your-client-secret>" \
     -e GPUSTACK_OIDC_REDIRECT_URI="<your-server-url>/auth/oidc/callback" \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
 ## SAML
@@ -155,5 +155,5 @@ sudo docker run -d --name gpustack \
     -e GPUSTACK_SAML_SP_X509_CERT="$SP_CERT" \
     -e GPUSTACK_SAML_SP_PRIVATE_KEY="$SP_PRIVATE_KEY" \
     -e GPUSTACK_SAML_SP_ATTRIBUTE_PREFIX="$SP_ATTRIBUTE_PREFIX" \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```

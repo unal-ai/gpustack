@@ -56,7 +56,7 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
 - To restrict GPU access, it's usually to remove `--privileged` flag and set the `NVIDIA_VISIBLE_DEVICES` environment variable as [NVIDIA Container Toolkit - GPU Enumeration](https://docs.nvidia.com/datacenter/cloud-native/container-toolkit/latest/docker-specialized.html#gpu-enumeration) described.
@@ -121,7 +121,7 @@ By default, GPUStack listens on port 80. You can change this with the `--port` p
  sudo docker run -d --name gpustack \
      ...
      --runtime nvidia \
-     gpustack/gpustack \
+     ghcr.io/unal-ai/gpustack \
 +    --port 9090
 
 ```

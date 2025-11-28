@@ -42,7 +42,7 @@ sudo docker run -d --name gpustack \
     --volume gpustack-data:/var/lib/gpustack \
     --volume /path/to/your/model:/path/to/your/model \
     --runtime ascend \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 
 ```
 
@@ -83,7 +83,7 @@ sudo docker run -d --name gpustack \
     --volume gpustack-data:/var/lib/gpustack \
     --volume /path/to/your/model:/path/to/your/model \
     --runtime ascend \
-    gpustack/gpustack \
+    ghcr.io/unal-ai/gpustack \
     --server-url http://your_gpustack_server_ip_or_hostname \
     --token your_gpustack_cluster_token
 

@@ -55,7 +55,7 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime iluvatar \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
 - To restrict GPU access, remove `--privileged` flag and set the `IX_VISIBLE_DEVICES` environment variable.
@@ -103,7 +103,7 @@ By default, GPUStack listens on port 80. You can change this with the `--port` p
  sudo docker run -d --name gpustack \
      ...
      --runtime iluvatar \
-     gpustack/gpustack \
+     ghcr.io/unal-ai/gpustack \
 +    --port 9090
 
 ```

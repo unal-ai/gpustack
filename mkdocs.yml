@@ -1,5 +1,5 @@
 site_name: GPUStack
-site_url: https://docs.gpustack.ai
+site_url: https://unal-ai.github.io/gpustack
 theme:
   name: material
   logo: assets/logo-white.png
@@ -68,7 +68,7 @@ markdown_extensions:
       custom_checkbox: true
   - pymdownx.arithmatex:
       generic: true
-repo_url: https://github.com/gpustack/gpustack
+repo_url: https://github.com/unal-ai/gpustack
 edit_uri: edit/main/docs/
 nav:
   - Home:
@@ -135,6 +135,7 @@ nav:
           - Integrate with CherryStudio: integrations/integrate-with-cherrystudio.md
       - Architecture: architecture.md
       - Scheduler: scheduler.md
+      - CI/CD & Deployment: ci-cd.md
       - Troubleshooting: troubleshooting.md
       - FAQ: faq.md
       - API Reference: api-reference.md

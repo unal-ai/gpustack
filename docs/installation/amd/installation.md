@@ -57,7 +57,7 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime amd \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
 - The `--privileged` flag is required for device vendor-agnostic access.
@@ -107,7 +107,7 @@ By default, GPUStack listens on port 80. You can change this with the `--port` p
  sudo docker run -d --name gpustack \
      ...
      --runtime amd \
-     gpustack/gpustack \
+     ghcr.io/unal-ai/gpustack \
 +    --port 9090
 
 ```

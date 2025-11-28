@@ -1,15 +1,15 @@
 <br>
 
 <p align="center">
-    <img alt="GPUStack" src="https://raw.githubusercontent.com/gpustack/gpustack/main/docs/assets/gpustack-logo.png" width="300px"/>
+    <img alt="GPUStack" src="https://raw.githubusercontent.com/unal-ai/gpustack/main/docs/assets/gpustack-logo.png" width="300px"/>
 </p>
 <br>
 
 <p align="center">
-    <a href="https://docs.gpustack.ai" target="_blank">
+    <a href="https://unal-ai.github.io/gpustack" target="_blank">
         <img alt="Documentation" src="https://img.shields.io/badge/ドキュメント-GPUStack-blue?logo=readthedocs&logoColor=white"></a>
     <a href="./LICENSE" target="_blank">
-        <img alt="License" src="https://img.shields.io/github/license/gpustack/gpustack?logo=github&logoColor=white&label=License&color=blue"></a>
+        <img alt="License" src="https://img.shields.io/github/license/unal-ai/gpustack?logo=github&logoColor=white&label=License&color=blue"></a>
     <a href="./docs/assets/wechat-group-qrcode.jpg" target="_blank">
         <img alt="WeChat" src="https://img.shields.io/badge/微信群-GPUStack-blue?logo=wechat&logoColor=white"></a>
     <a href="https://discord.gg/VXYJzuaqwD" target="_blank">
@@ -35,7 +35,7 @@ GPUStackは、効率的なAIモデルデプロイメントのために設計さ�
 
 ![a100-throughput-comparison](docs/assets/a100-throughput-comparison.png)
 
-詳細なベンチマーク方法と結果については、[推論パフォーマンスラボ](https://docs.gpustack.ai/latest/performance-lab/overview/)をご覧ください。
+詳細なベンチマーク方法と結果については、[推論パフォーマンスラボ](https://unal-ai.github.io/gpustack/performance-lab/overview/)をご覧ください。
 
 ## テスト済み推論エンジン、GPU、およびモデル
 
@@ -87,10 +87,10 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
-`Docker Hub`からイメージをプルできない場合、またはダウンロードが非常に遅い場合は、レジストリを`quay.io`に向けることで私たちの`Quay.io`ミラーを使用できます：
+GHCRではなく社内のミラーから取得する必要がある場合は、デフォルトのレジストリを上書きします：
 
 ```bash
 sudo docker run -d --name gpustack \
@@ -100,11 +100,11 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    quay.io/gpustack/gpustack \
-    --system-default-container-registry quay.io
+    ghcr.io/unal-ai/gpustack \
+    --system-default-container-registry <your_registry>
 ```
 
-インストールの詳細や他のGPUハードウェアプラットフォームについては、[インストール要件](https://docs.gpustack.ai/latest/installation/requirements/)を参照してください。
+インストールの詳細や他のGPUハードウェアプラットフォームについては、[インストール要件](https://unal-ai.github.io/gpustack/installation/requirements/)を参照してください。
 
 GPUStackの起動ログを確認します：
 
@@ -173,7 +173,7 @@ curl http://your_gpustack_server_url/v1/chat/completions \
 
 ## ドキュメント
 
-完全なドキュメントについては、[公式ドキュメントサイト](https://docs.gpustack.ai)を参照してください。
+完全なドキュメントについては、[公式ドキュメントサイト](https://unal-ai.github.io/gpustack)を参照してください。
 
 ## ビルド
 

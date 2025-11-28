@@ -15,7 +15,7 @@ You can enable the `DEBUG` mode by setting the `--debug` flag when running GPUSt
 ```diff
 sudo docker run -d --name gpustack \
     ...
-    gpustack/gpustack \
+    ghcr.io/unal-ai/gpustack \
 +    --debug
     ...
 ```

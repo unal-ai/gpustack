@@ -34,7 +34,7 @@ docker run -d --name gpustack \
       --network=host \
       --ipc=host \
       -v gpustack-data:/var/lib/gpustack \
-      gpustack/gpustack \
+      ghcr.io/unal-ai/gpustack \
       --huggingface-token <Hugging Face API Key>
 ```
 

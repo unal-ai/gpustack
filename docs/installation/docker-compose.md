@@ -29,7 +29,7 @@ This guide explains how to deploy GPUStack and observability components (Prometh
   ```
 
 ### Deployment
-- **Server** ([compose file](https://github.com/gpustack/gpustack/blob/v2.0.0/docker-compose/docker-compose.server.nvidia.yaml)):
+- **Server** ([compose file](https://github.com/unal-ai/gpustack/blob/main/docker-compose/docker-compose.server.nvidia.yaml)):
   ```bash
   sudo docker compose -f docker-compose.server.nvidia.yaml up -d
   ```
@@ -38,7 +38,7 @@ This guide explains how to deploy GPUStack and observability components (Prometh
   ```bash
   sudo docker exec -it gpustack-server cat /var/lib/gpustack/initial_admin_password
   ```
-- **Worker** ([compose file](https://github.com/gpustack/gpustack/blob/v2.0.0/docker-compose/docker-compose.worker.nvidia.yaml)):
+- **Worker** ([compose file](https://github.com/unal-ai/gpustack/blob/main/docker-compose/docker-compose.worker.nvidia.yaml)):
   - Edit file: set `server-url` and `token`.
   - Start:
   ```bash
@@ -64,7 +64,7 @@ This guide explains how to deploy GPUStack and observability components (Prometh
   ```bash
   export ASCEND_VISIBLE_DEVICES=$(ls /dev/davinci* 2>/dev/null | head -1 | grep -o '[0-9]\+' || echo "0")
   ```
-- **Server** ([compose file](https://github.com/gpustack/gpustack/blob/v2.0.0/docker-compose/docker-compose.server.ascend.yaml)):
+- **Server** ([compose file](https://github.com/unal-ai/gpustack/blob/main/docker-compose/docker-compose.server.ascend.yaml)):
   ```bash
   sudo -E docker compose -f docker-compose.server.ascend.yaml up -d
   ```
@@ -73,7 +73,7 @@ This guide explains how to deploy GPUStack and observability components (Prometh
   ```bash
   sudo docker exec -it gpustack-server cat /var/lib/gpustack/initial_admin_password
   ```
-- **Worker** ([compose file](https://github.com/gpustack/gpustack/blob/v2.0.0/docker-compose/docker-compose.worker.ascend.yaml)):
+- **Worker** ([compose file](https://github.com/unal-ai/gpustack/blob/main/docker-compose/docker-compose.worker.ascend.yaml)):
   - Edit file: set `server-url` and `token`.
   - Start:
   ```bash

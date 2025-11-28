@@ -49,7 +49,7 @@ sudo docker run -d --name gpustack \
     --network host \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
 - To restrict GPU access, remove `--privileged` flag and set `--device` options accordingly.
@@ -71,7 +71,7 @@ Mount pre-downloaded model files into the container so they can be deployed from
      ...
      --volume gpustack-data:/var/lib/gpustack \
 +    --volume /path/to/model_files:/path/to/model_files:ro \
-     gpustack/gpustack
+     ghcr.io/unal-ai/gpustack
 
 ```
 
@@ -84,7 +84,7 @@ Mount a dedicated directory for storing downloaded models rather than relying on
      ...
      --volume gpustack-data:/var/lib/gpustack \
 +    --volume /path/to/model_files:/var/lib/gpustack/cache \
-     gpustack/gpustack
+     ghcr.io/unal-ai/gpustack
 
 ```
 
@@ -96,7 +96,7 @@ By default, GPUStack listens on port 80. You can change this with the `--port` p
  sudo docker run -d --name gpustack \
      ...
      --volume gpustack-data:/var/lib/gpustack \
-     gpustack/gpustack \
+     ghcr.io/unal-ai/gpustack \
 +    --port 9090
 
 ```

@@ -16,10 +16,10 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
-If you cannot pull images from `Docker Hub` or the download is very slow, you can use our `Quay.io` mirror by pointing your registry to `quay.io`:
+If you need to pull from an internal mirror instead of GHCR, override the default registry:
 
 ```bash
 sudo docker run -d --name gpustack \
@@ -29,8 +29,8 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    quay.io/gpustack/gpustack \
-    --system-default-container-registry quay.io
+    ghcr.io/unal-ai/gpustack \
+    --system-default-container-registry <your_registry>
 ```
 
 For more details on the installation or other GPU hardware platforms, please refer to the [Installation Requirements](installation/requirements.md).

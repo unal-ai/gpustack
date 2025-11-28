@@ -39,7 +39,7 @@ You can set it to a custom name using the `--worker-name` flag when running GPUS
 ```diff
 sudo docker run -d --name gpustack \
     ...
-    gpustack/gpustack \
+    ghcr.io/unal-ai/gpustack \
 +    --worker-name New-Name
 ```
 
@@ -50,7 +50,7 @@ You can set it to a custom IP using the `--worker-ip` flag when running GPUStack
 ```diff
 sudo docker run -d --name gpustack \
     ...
-    gpustack/gpustack \
+    ghcr.io/unal-ai/gpustack \
 +    --worker-ip xx.xx.xx.xx
 ```
 
@@ -78,7 +78,7 @@ sudo docker run -d --name gpustack \
 -    --volume gpustack-data:/var/lib/gpustack \
 +    --volume /data/gpustack:/var/lib/gpustack \
     ...
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
 ### Where are model files stored?
@@ -106,7 +106,7 @@ sudo docker run -d --name gpustack \
     --volume gpustack-data:/var/lib/gpustack \
 +    --volume /data/model-cache:/var/lib/gpustack/cache \
     ...
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
 ---
@@ -123,7 +123,7 @@ For example, configure the `hf-mirror.com` mirror:
 sudo docker run -d --name gpustack \
 +    -e HF_ENDPOINT=https://hf-mirror.com \
     ...
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
 ---

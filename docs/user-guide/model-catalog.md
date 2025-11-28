@@ -14,7 +14,7 @@ You can deploy a model from the Model Catalog by clicking the model card. A mode
 
 ## Customize Model Catalog
 
-You can customize the Model Catalog by providing a YAML file via GPUStack server configuration using the `--model-catalog-file` flag. It accepts either a local file path or a URL. You can refer to the built-in model catalog file [here](https://github.com/gpustack/gpustack/blob/main/gpustack/assets/model-catalog.yaml) for the schema.
+You can customize the Model Catalog by providing a YAML file via GPUStack server configuration using the `--model-catalog-file` flag. It accepts either a local file path or a URL. You can refer to the built-in model catalog file [here](https://github.com/unal-ai/gpustack/blob/main/gpustack/assets/model-catalog.yaml) for the schema.
 
 The following is an example of a custom model catalog YAML file:
 

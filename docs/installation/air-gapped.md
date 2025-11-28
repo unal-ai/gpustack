@@ -25,19 +25,19 @@ GPUStack provides various container images for different inference backends, ava
 To transfer the required container images to your internal registry from a machine with internet access, use the GPUStack `copy-images` command:
 
 ```bash
-sudo docker run --rm -it --entrypoint "" gpustack/gpustack \
+sudo docker run --rm -it --entrypoint "" ghcr.io/unal-ai/gpustack \
     gpustack copy-images \
     --destination <your_internal_registry> \
     --destination-username <your_username> \
     --destination-password <your_password>
 ```
 
-If you cannot pull images from `Docker Hub` or the download is very slow, you can use our `Quay.io` mirror by pointing the source registry to `quay.io`:
+If GHCR access is slow in your environment, point the source registry to an internal mirror instead:
 
 ```bash
-sudo docker run --rm -it --entrypoint "" gpustack/gpustack \
+sudo docker run --rm -it --entrypoint "" ghcr.io/unal-ai/gpustack \
     gpustack copy-images \
-    --source quay.io \
+    --source <your_mirror_registry> \
     --destination <your_internal_registry> \
     --destination-username <your_username> \
     --destination-password <your_password>
@@ -47,16 +47,16 @@ For more details on `copy-images`, refer to the [CLI Reference](../cli-reference
 
 - **List Images**
 
-If you cannot access your internal registry directly, you can first pull the `gpustack/gpustack` image and then use `list-images` command to see which images need to be downloaded:
+If you cannot access your internal registry directly, you can first pull the `ghcr.io/unal-ai/gpustack` image and then use `list-images` command to see which images need to be downloaded:
 
 ```bash
-sudo docker run --rm -it --entrypoint "" gpustack/gpustack \
+sudo docker run --rm -it --entrypoint "" ghcr.io/unal-ai/gpustack \
     gpustack list-images
 ```
 
 !!! note
 
-    This uses the latest version by default. To target a specific version, use the full image tag, e.g., gpustack/gpustack:vx.y.z.
+    This uses the latest version by default. To target a specific version, use the full image tag, e.g., ghcr.io/unal-ai/gpustack:vx.y.z.
 
 The displayed image list includes all supported accelerators, inference backends, versions, and architectures. If you only need a subset, see the [CLI Reference](../cli-reference/list-images.md) for filtering options.
 
@@ -76,8 +76,8 @@ For example, to install with NVIDIA and start the GPUStack server **with the bui
      --volume /var/run/docker.sock:/var/run/docker.sock \
      --volume gpustack-data:/var/lib/gpustack \
      --runtime nvidia \
--    gpustack/gpustack
-+    <your_internal_registry>/gpustack/gpustack \
+-    ghcr.io/unal-ai/gpustack
++    <your_internal_registry>/ghcr.io/unal-ai/gpustack \
 +    --system-default-container-registry <your_internal_registry>
 
 ```

@@ -51,7 +51,7 @@ In the following steps, this path is referenced as `${your-data-dir}`.
     +   --env GPUSTACK_MIGRATION_DATA_DIR=/var/lib/gpustack \
     +   --volume ${your-data-dir}:/var/lib/gpustack \
         --runtime nvidia \
-        gpustack/gpustack
+        ghcr.io/unal-ai/gpustack
     ```
 
     This command will launch the GPUStack server in Docker, preserving and migrating your existing data.
@@ -68,7 +68,7 @@ In the following steps, this path is referenced as `${your-data-dir}`.
         --volume /var/run/docker.sock:/var/run/docker.sock \
     +   --volume ${your-data-dir}:/var/lib/gpustack \
         --runtime nvidia \
-        gpustack/gpustack \
+        ghcr.io/unal-ai/gpustack \
         --server-url ${server-url} \
         --token ${token}
     ```
@@ -137,7 +137,7 @@ In the following steps, this path is referenced as `${your-data-dir}`.
         --volume /var/run/docker.sock:/var/run/docker.sock \
     +   --volume ${your-data-dir}:/var/lib/gpustack \
         --runtime nvidia \
-        gpustack/gpustack \
+        ghcr.io/unal-ai/gpustack \
     +     --database-url ${your-database-url}
     ```
 
@@ -153,7 +153,7 @@ In the following steps, this path is referenced as `${your-data-dir}`.
         --volume /var/run/docker.sock:/var/run/docker.sock \
     +   --volume ${your-data-dir}:/var/lib/gpustack \
         --runtime nvidia \
-        gpustack/gpustack \
+        ghcr.io/unal-ai/gpustack \
         --server-url ${server-url} \
         --token ${token}
     ```

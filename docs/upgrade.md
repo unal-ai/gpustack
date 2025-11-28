@@ -27,13 +27,13 @@ You can upgrade by pulling a new image (either a specific version tag or the lat
 For example:
 
 ```bash
-docker pull gpustack/gpustack:latest  # or: docker pull gpustack/gpustack:vx.y.z
+docker pull ghcr.io/unal-ai/gpustack:latest  # or: docker pull ghcr.io/unal-ai/gpustack:vx.y.z
 
 docker stop gpustack
 docker rm gpustack
 
 docker run -d --name gpustack \
   ... \
-  gpustack/gpustack:latest
+  ghcr.io/unal-ai/gpustack:latest
   ...
 ```

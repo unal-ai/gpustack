@@ -1,15 +1,15 @@
 <br>
 
 <p align="center">
-    <img alt="GPUStack" src="https://raw.githubusercontent.com/gpustack/gpustack/main/docs/assets/gpustack-logo.png" width="300px"/>
+    <img alt="GPUStack" src="https://raw.githubusercontent.com/unal-ai/gpustack/main/docs/assets/gpustack-logo.png" width="300px"/>
 </p>
 <br>
 
 <p align="center">
-    <a href="https://docs.gpustack.ai" target="_blank">
+    <a href="https://unal-ai.github.io/gpustack" target="_blank">
         <img alt="Documentation" src="https://img.shields.io/badge/Docs-GPUStack-blue?logo=readthedocs&logoColor=white"></a>
     <a href="./LICENSE" target="_blank">
-        <img alt="License" src="https://img.shields.io/github/license/gpustack/gpustack?logo=github&logoColor=white&label=License&color=blue"></a>
+        <img alt="License" src="https://img.shields.io/github/license/unal-ai/gpustack?logo=github&logoColor=white&label=License&color=blue"></a>
     <a href="./docs/assets/wechat-group-qrcode.jpg" target="_blank">
         <img alt="WeChat" src="https://img.shields.io/badge/微信群-GPUStack-blue?logo=wechat&logoColor=white"></a>
     <a href="https://discord.gg/VXYJzuaqwD" target="_blank">
@@ -35,7 +35,7 @@ The following figure shows how GPUStack delivers improved inference throughput o
 
 ![a100-throughput-comparison](docs/assets/a100-throughput-comparison.png)
 
-For detailed benchmarking methods and results, visit our [Inference Performance Lab](https://docs.gpustack.ai/latest/performance-lab/overview/).
+For detailed benchmarking methods and results, visit our [Inference Performance Lab](https://unal-ai.github.io/gpustack/performance-lab/overview/).
 
 ## Tested Inference Engines, GPUs, and Models
 
@@ -87,10 +87,10 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    gpustack/gpustack
+    ghcr.io/unal-ai/gpustack
 ```
 
-If you cannot pull images from `Docker Hub` or the download is very slow, you can use our `Quay.io` mirror by pointing your registry to `quay.io`:
+If you need to pull from an internal mirror instead of GHCR, override the default registry:
 
 ```bash
 sudo docker run -d --name gpustack \
@@ -100,11 +100,11 @@ sudo docker run -d --name gpustack \
     --volume /var/run/docker.sock:/var/run/docker.sock \
     --volume gpustack-data:/var/lib/gpustack \
     --runtime nvidia \
-    quay.io/gpustack/gpustack \
-    --system-default-container-registry quay.io
+    ghcr.io/unal-ai/gpustack \
+    --system-default-container-registry <your_registry>
 ```
 
-For more details on the installation or other GPU hardware platforms, please refer to the [Installation Requirements](https://docs.gpustack.ai/latest/installation/requirements/).
+For more details on the installation or other GPU hardware platforms, please refer to the [Installation Requirements](https://unal-ai.github.io/gpustack/installation/requirements/).
 
 Check the GPUStack startup logs:
 
@@ -173,7 +173,14 @@ curl http://your_gpustack_server_url/v1/chat/completions \
 
 ## Documentation
 
-Please see the [official docs site](https://docs.gpustack.ai) for complete documentation.
+Please see the [official docs site](https://unal-ai.github.io/gpustack) for complete documentation.
+
+## CI/CD and deployments
+
+- `ci.yml` runs lint/tests/build on pushes, PRs, and tags; tag builds upload wheels to the GitHub release and publish to PyPI if `PYPI_API_TOKEN` (or `CI_PYPI_API_TOKEN`) is configured.
+- `pack.yaml` builds multi-arch images from `pack/Dockerfile` and pushes them to `ghcr.io/unal-ai/gpustack` for pushes and tags (PRs build only).
+- `docs.yml` builds the MkDocs site and publishes it to GitHub Pages (`https://unal-ai.github.io/gpustack`).
+- Container defaults now point to GHCR; set `--system-default-container-registry` when running the server if you want to mirror images elsewhere.
 
 ## Build
 

@@ -1294,7 +1294,7 @@ async def test_manual_schedule_to_single_worker_multi_gpu_partial_offload(config
         # Automatic single worker selection.
         # Check point:
         # - Total usage exceeds the available resources,
-        #   see https://github.com/gpustack/gpustack/issues/2451.
+        #   see https://github.com/unal-ai/gpustack/issues/2451.
         (
             new_model(
                 id=1,
@@ -1309,7 +1309,7 @@ async def test_manual_schedule_to_single_worker_multi_gpu_partial_offload(config
         # Semi-automatic single worker selection.
         # Check point:
         # - Specified offloading requirement still exceeds the available resources,
-        #   see https://github.com/gpustack/gpustack/issues/2451.
+        #   see https://github.com/unal-ai/gpustack/issues/2451.
         (
             new_model(
                 id=1,
